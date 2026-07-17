@@ -1,0 +1,78 @@
+Here's a cleaner and more professional version of your Java program with proper comments, meaningful variable names, and well-formatted output.
+
+```java
+import java.util.Date;
+
+/**
+ * A simple Java application that prints
+ * a welcome message along with the current date and time.
+ */
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Create an object to get the current date and time
+        Date currentDateTime = new Date();
+
+        // Display application banner
+        System.out.println("========================================");
+        System.out.println("       🚀 Welcome to Docker + Java");
+        System.out.println("========================================");
+
+        // Display the current date and time
+        System.out.println("Current Date & Time : " + currentDateTime);
+
+        System.out.println("----------------------------------------");
+        System.out.println("Application executed successfully!");
+        System.out.println("========================================");
+    }
+}
+```
+
+### Sample Output
+
+```text
+========================================
+       🚀 Welcome to Docker + Java
+========================================
+Current Date & Time : Wed Jul 16 15:42:31 UTC 2026
+----------------------------------------
+Application executed successfully!
+========================================
+```
+
+### If you want a more modern approach (Recommended)
+
+Instead of the older `Date` class, use the Java 8+ `LocalDateTime` API:
+
+```java
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Define a readable date and time format
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy | hh:mm:ss a");
+
+        // Get the current date and time
+        LocalDateTime now = LocalDateTime.now();
+
+        // Display application banner
+        System.out.println("========================================");
+        System.out.println("        🚀 Docker Java Application");
+        System.out.println("========================================");
+
+        System.out.println("Hello, Docker! 👋");
+        System.out.println("Current Date & Time: " + now.format(formatter));
+
+        System.out.println("========================================");
+        System.out.println("Status: Application is running successfully.");
+        System.out.println("========================================");
+    }
+}
+```
+
+
